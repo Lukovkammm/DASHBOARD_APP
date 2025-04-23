@@ -1,60 +1,28 @@
-import eslintPluginPrettier from 'eslint-plugin-prettier';
-import typescriptEslintPlugin from '@typescript-eslint/eslint-plugin';
-import angularEslintPlugin from '@angular-eslint/eslint-plugin';
-import angularEslintTemplatePlugin from '@angular-eslint/eslint-plugin-template';
-import typescriptEslintParser from '@typescript-eslint/parser';
-import angularEslintTemplateParser from '@angular-eslint/template-parser';
+import js from '@eslint/js'
+import globals from 'globals'
+import reactHooks from 'eslint-plugin-react-hooks'
+import reactRefresh from 'eslint-plugin-react-refresh'
+import tseslint from 'typescript-eslint'
 
-export default [
+export default tseslint.config(
+  { ignores: ['dist'] },
   {
-    files: ['**/*.ts'],
+    extends: [js.configs.recommended, ...tseslint.configs.recommended],
+    files: ['**/*.{ts,tsx}'],
     languageOptions: {
-      parser: typescriptEslintParser,
-      parserOptions: {
-        ecmaVersion: 2021,
-        sourceType: 'module',
-      },
+      ecmaVersion: 2020,
+      globals: globals.browser,
     },
     plugins: {
-      '@typescript-eslint': typescriptEslintPlugin,
-      '@angular-eslint': angularEslintPlugin,
-      prettier: eslintPluginPrettier,
+      'react-hooks': reactHooks,
+      'react-refresh': reactRefresh,
     },
     rules: {
-      ...typescriptEslintPlugin.configs.recommended.rules,
-      ...typescriptEslintPlugin.configs.stylistic.rules,
-      ...angularEslintPlugin.configs.recommended.rules,
-      ...eslintPluginPrettier.configs.recommended.rules,
-      '@angular-eslint/directive-selector': [
-        'error',
-        {
-          type: 'attribute',
-          prefix: 'app',
-          style: 'camelCase',
-        },
+      ...reactHooks.configs.recommended.rules,
+      'react-refresh/only-export-components': [
+        'warn',
+        { allowConstantExport: true },
       ],
-      '@angular-eslint/component-selector': [
-        'error',
-        {
-          type: 'element',
-          prefix: 'app',
-          style: 'kebab-case',
-        },
-      ],
-      'prettier/prettier': ['error'],
     },
   },
-  {
-    files: ['**/*.html'],
-    languageOptions: {
-      parser: angularEslintTemplateParser,
-    },
-    plugins: {
-      '@angular-eslint/template': angularEslintTemplatePlugin,
-    },
-    rules: {
-      ...angularEslintTemplatePlugin.configs.recommended.rules,
-      ...angularEslintTemplatePlugin.configs.accessibility.rules,
-    },
-  },
-];
+)
