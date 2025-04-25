@@ -1,0 +1,23 @@
+nav {
+  display: flex;
+  flex-direction: column;
+  row-gap: 40px;
+  width: 300px;
+  background: #3b82f6;
+  color: #F9FAFB;
+  padding: 30px 20px;
+  border: 0px;
+  border-bottom-right-radius: 15px;
+  border-top-right-radius: 15px;
+}
+
+ul {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1rem;
+  font-size: 1.5rem;
+}
+
+li {
+  text-transform: lowercase;
+}
