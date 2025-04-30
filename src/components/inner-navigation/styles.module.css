@@ -1,0 +1,24 @@
+.inner-navigation {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  width: fit-content;
+  background-color: var(--panel-bg-color);
+  border-radius: 7px;
+  overflow: hidden;
+}
+
+.inner-navigation a {
+  padding: 8px 12px;
+  font-size: var(--font-size-default);
+  color: var(--secondary-text-color);
+  text-decoration: none;
+  transition:
+    background-color 0.3s,
+    color 0.3s;
+}
+
+.inner-navigation a:hover {
+  background-color: var(--accent-color);
+  color: var(--inverse-text-color);
+}

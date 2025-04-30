@@ -1,0 +1,12 @@
+.app {
+  display: flex;
+  height: 100vh;
+}
+
+main {
+  flex: 1;
+  padding: 16px 24px;
+  font-family: var(--font-family);
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}

@@ -1,4 +1,36 @@
-/* Reset some default browser styles */
+:root {
+  /* Акцентные цвета */
+  --primary-color: #2196f3;
+  --success-color: #4caf50;
+  --secondary-color: #673ab7;
+  --danger-color: #f44336;
+
+  /* Цвета для светлой темы */
+  --color-bg-primary: #ffffff;
+  --color-bg-secondary: #edf2f7;
+  --color-text-primary: #2d3748;
+  --color-text-secondary: #4a5568;
+  --color-text-accent: #2b6cb0;
+  --color-border: #e2e8f0;
+  --color-shadow: rgba(0, 0, 0, 0.1);
+
+  /* Цвета для тёмной темы */
+  /* --color-bg-primary: #2d3748;
+  --color-bg-secondary: #283141;
+  --color-text-primary: #f7fafc;
+  --color-text-secondary: #e2e8f0;
+  --color-text-accent: #56fcd5;
+  --color-border: #3c4858;
+  --color-shadow: rgba(0, 0, 0, 0.7); */
+
+  /* Шрифты */
+  --font-family:
+    'Inter', 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  --font-size-default: 16px;
+  --font-size-sm: 14px;
+  --font-size-lg: 20px;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -8,23 +40,60 @@
 html,
 body {
   height: 100%;
-  font-family: "Nunito", sans-serif;
+  font-family: var(--font-family);
   font-optical-sizing: auto;
-  background-color: #F9FAFB;
 }
 
-main {
-  flex: 1;
-  padding: 30px 20px;
+/* delete it when themes are ready */
+body {
+  --bg-color: var(--color-bg-primary);
+  --panel-bg-color: var(--color-bg-secondary);
+  --text-color: var(--color-text-primary);
+  --inverse-text-color: var(--color-bg-primary);
+  --secondary-text-color: var(--light-secondary-text);
+  --border-color: var(--color-border);
+  --shadow-color: var(--color-shadow);
+  --accent-color: var(--color-text-accent);
+}
+
+body.light-theme {
+  --bg-color: var(--color-bg-primary);
+  --panel-bg-color: var(--color-bg-secondary);
+  --text-color: var(--color-text-primary);
+  --inverse-text-color: var(--color-bg-primary);
+  --secondary-text-color: var(--color-text-secondary);
+  --border-color: var(--color-border);
+  --shadow-color: var(--color-shadow);
+  --accent-color: var(--color-text-accent);
+}
+
+body.dark-theme {
+  --bg-color: var(--color-bg-primary);
+  --panel-bg-color: var(--color-bg-secondary);
+  --text-color: var(--color-text-primary);
+  --inverse-text-color: var(--color-bg-primary);
+  --secondary-text-color: var(--color-text-secondary);
+  --border-color: var(--color-border);
+  --shadow-color: var(--color-shadow);
+  --accent-color: var(--color-text-accent);
 }
 
 h1 {
-  font-size: 3rem;
+  margin: 0 0 16px 0;
+  font-size: var(--font-size-lg);
+  color: var(--text-color);
 }
 
 h2 {
-  font-size: 2rem;
-  color: #33363d;
+  margin: 0 0 12px 0;
+  font-size: var(--font-size-default);
+  color: var(--secondary-text-color);
+}
+
+h3 {
+  margin: 0 0 8px 0;
+  font-size: var(--font-size-sm);
+  color: var(--secondary-text-color);
 }
 
 ul,
