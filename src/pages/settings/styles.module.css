@@ -1,0 +1,19 @@
+.nav-list {
+  background-color: var(--color-muted-light);
+  border-radius: 7px;
+}
+
+.nav-link {
+  background-color: var(--color-background);
+  border-radius: 7px;
+}
+
+a:hover {
+  /* text-decoration: none;
+    color: var(--color-foreground);
+    font-weight: 500;
+    font-size: 1.2rem;
+    padding: 0.5rem 1rem;
+    display: block;
+    transition: all 0.3s ease-in-out; */
+}

@@ -1,0 +1,10 @@
+.card-layout {
+  display: flex;
+  flex-direction: column;
+  border-radius: 12px;
+  padding: 16px;
+  overflow: hidden;
+  background-color: var(--panel-bg-color);
+  border: 1ps solid var(--border-color);
+  box-shadow: 0 2px 4px var(--shadow-color);
+}

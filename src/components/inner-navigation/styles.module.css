@@ -22,3 +22,9 @@
   background-color: var(--accent-color);
   color: var(--inverse-text-color);
 }
+
+.active {
+  background-color: var(--accent-color);
+  color: var(--inverse-text-color);
+  font-weight: 600;
+}
